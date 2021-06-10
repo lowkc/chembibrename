@@ -60,7 +60,7 @@ cp $2 $outfile
 # Command to insert abbreviations
 function replace() {
         # Generate search regex
-        if grep -Rq "$journal" $outfile; then
+        if grep -Rqi "$journal" $outfile; then
 	    echo "Replacing \"$journal\" with \"$jabbrev\""
             searchregex="journal[ ]*=[ ]*{$journal}"
             replaceregex="journal = {$jabbrev}"
